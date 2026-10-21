@@ -12,9 +12,11 @@ def leer_texto(ruta):
 		return[]
 
 def contar(palabras):
+	ignorar = ["las", "los", "como", "del", "que", "sus", "una"]
 	conteo = {}
 	for palabra in palabras:
-		if len(palabra) >= 3:
+		if palabra in ignorar: continue
+		if len(palabra) >= 4:
 			if palabra in conteo:
 				conteo[palabra] += 1
 			else:
