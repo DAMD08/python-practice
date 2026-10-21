@@ -1,13 +1,10 @@
 def leer_texto(ruta):
-
 	try:
-
 		with open(ruta, "r", encoding="utf-8") as archivo:
 			contenido = archivo.read()
 		contenido_minusculas = contenido.lower()
 		for signo in [".", ",", ";", ":"]:
 			contenido_minusculas = contenido_minusculas.replace(signo, "")
-
 		palabras = contenido_minusculas.split()
 		return palabras
 	except FileNotFoundError:
@@ -17,10 +14,11 @@ def leer_texto(ruta):
 def contar(palabras):
 	conteo = {}
 	for palabra in palabras:
-		if palabra in conteo:
-			conteo[palabra] += 1
-		else:
-			conteo[palabra] = 1
+		if len(palabra) >= 3:
+			if palabra in conteo:
+				conteo[palabra] += 1
+			else:
+				conteo[palabra] = 1
 	return conteo
 
 def top(conteo, n):
