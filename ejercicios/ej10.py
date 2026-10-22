@@ -6,6 +6,12 @@ df = pd.DataFrame({
 })
 
 print(df)
+print(df[df["cantidad"] > 3])
 print(df.dtypes)
 print(df["cantidad"].sum())
 print(df.groupby("fruta")["cantidad"].sum())
+print(df.groupby("fruta")["cantidad"].mean())
+print(df.groupby("fruta")["cantidad"].max())
+print(df.groupby("fruta")["cantidad"].min())
+print(df.groupby("fruta")["cantidad"].count())
+
