@@ -1,5 +1,6 @@
 import pandas as pd
-from checks import contar_nulos, contar_duplicados
+from checks import contar_nulos
+from checks import contar_duplicados
 
 def test_sin_nulos():
     df = pd.DataFrame({
